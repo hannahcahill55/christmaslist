@@ -1,89 +1,32 @@
-/* Red + Green Christmas Theme */
-/* Red + Green gradient background ONLY for homepage */
+/* Red + Green animated shimmer for homepage */
 body.page.home {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(180deg, red, green);
 }
 
-}
-
-.site-header.redgreen {
-  background: rgba(0, 0, 0, 0.25);
-  border-bottom: 2px solid rgba(255,255,255,0.3);
-}
-
-/* Tree animation container */
-.tree-container {
-  position: relative;
-  width: 200px;
-  margin: 30px auto;
-  height: 260px;
-}
-
-/* Christmas tree triangle */
-.tree {
-  width: 0;
-  height: 0;
-  border-left: 80px solid transparent;
-  border-right: 80px solid transparent;
-  border-bottom: 160px solid #0a8f00;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: sway 3s infinite ease-in-out;
-}
-
-/* Tree trunk */
-.tree::after {
-  content: "";
-  width: 40px;
-  height: 60px;
-  background: #5c3a1e;
-  position: absolute;
-  bottom: -60px;
-  left: -20px;
-  border-radius: 6px;
-}
-
-/* Glowing star */
-.star {
-  width: 0;
-  height: 0;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-bottom: 28px solid gold;
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%) rotate(35deg);
-  animation: glow 1.5s infinite ease-in-out;
-}
-
-/* Star sparkle */
-.star:after {
+/* Shimmer overlay */
+body.page.home::before {
   content: "";
   position: absolute;
-  left: -18px;
-  top: 19px;
-  width: 0;
-  height: 0;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-top: 28px solid gold;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 0, 0, 0.3),
+    rgba(0, 255, 0, 0.3),
+    rgba(255, 0, 0, 0.3)
+  );
+  animation: shimmer 6s infinite linear;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
-/* Sway animation */
-@keyframes sway {
-  0% { transform: translateX(-50%) rotate(-2deg); }
-  50% { transform: translateX(-50%) rotate(2deg); }
-  100% { transform: translateX(-50%) rotate(-2deg); }
+/* Shimmer movement */
+@keyframes shimmer {
+  0% { transform: translateX(-40%) translateY(-20%) rotate(0deg); }
+  50% { transform: translateX(40%) translateY(20%) rotate(180deg); }
+  100% { transform: translateX(-40%) translateY(-20%) rotate(360deg); }
 }
 
-/* Glow animation */
-@keyframes glow {
-  0% { filter: drop-shadow(0 0 2px gold); }
-  50% { filter: drop-shadow(0 0 10px yellow); }
-  100% { filter: drop-shadow(0 0 2px gold); }
-}
 
 
