@@ -1,177 +1,188 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Family Christmas Lists</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(#b30024, #ff5f7f);
-      color: white;
-    }
-
-    nav {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 1rem 2rem;
-      backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: opacity 0.2s;
-    }
-
-    nav ul li a:hover {
-      opacity: 0.7;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      background: rgba(255, 255, 255, 0.18);
-      padding: 2rem;
-      border-radius: 20px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-
-    .cat {
-      background: rgba(255,255,255,0.25);
-      padding: 1rem;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
-    }
-
-    .cat h3 {
-      margin: 0 0 0.5rem;
-    }
-
-    .cat p {
-      margin: 0;
-      opacity: 0.9;
-      font-size: 0.95rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <nav>
     <ul>
-      <li><a href="#hannah">Hannah</a></li>
-      <li><a href="#hayley">Hayley</a></li>
-      <li><a href="#alexa">Alexa</a></li>
+      <li><a href="hannah.html">Hannah</a></li>
+      <li><a href="hayley.html">Hayley</a></li>
+      <li><a href="alexa.html">Alexa</a></li>
     </ul>
   </nav>
 
   <header>
     <h1>🎄 Family Christmas Lists 🎁</h1>
-    <p>Select a family member below to view their wish categories.</p>
+    <p>Choose a family member to view their Christmas list.</p>
   </header>
-
-  <section id="hannah">
-    <h2>Hannah's List</h2>
-    <div class="categories">
-      <div class="cat">
-        <h3>Electronics</h3>
-        <p>Phones, gadgets, accessories</p>
-      </div>
-      <div class="cat">
-        <h3>Clothes</h3>
-        <p>Outfits, pajamas, winter gear</p>
-      </div>
-      <div class="cat">
-        <h3>Hobbies</h3>
-        <p>Books, crafts, sports, kits</p>
-      </div>
-      <div class="cat">
-        <h3>Stocking Stuffers</h3>
-        <p>Small treats & fun goodies</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="hayley">
-    <h2>Hayley's List</h2>
-    <div class="categories">
-      <div class="cat">
-        <h3>Makeup & Beauty</h3>
-        <p>Skincare, makeup kits</p>
-      </div>
-      <div class="cat">
-        <h3>Clothes</h3>
-        <p>Tops, shoes, accessories</p>
-      </div>
-      <div class="cat">
-        <h3>Room Decor</h3>
-        <p>Lights, decor, personal items</p>
-      </div>
-      <div class="cat">
-        <h3>Stocking Stuffers</h3>
-        <p>Treats, small gifts</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="alexa">
-    <h2>Alexa's List</h2>
-    <div class="categories">
-      <div class="cat">
-        <h3>Toys</h3>
-        <p>Dolls, games, fun toys</p>
-      </div>
-      <div class="cat">
-        <h3>Clothes</h3>
-        <p>Kids outfits & accessories</p>
-      </div>
-      <div class="cat">
-        <h3>Books</h3>
-        <p>Storybooks & activity books</p>
-      </div>
-      <div class="cat">
-        <h3>Stocking Stuffers</h3>
-        <p>Stickers, candy, tiny surprises</p>
-      </div>
-    </div>
-  </section>
-
 </body>
 </html>
+
+
+<!-- hannah.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hannah's Christmas List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav><a href="index.html">⬅ Back</a></nav>
+  <header><h1>🎁 Hannah's Christmas List</h1></header>
+
+  <section>
+    <h2>Electronics</h2>
+    <ul>
+      <li>AirPods</li>
+      <li>Phone case</li>
+      <li>Bluetooth speaker</li>
+    </ul>
+
+    <h2>Clothes</h2>
+    <ul>
+      <li>Sweater</li>
+      <li>Jeans</li>
+      <li>Boots</li>
+    </ul>
+
+    <h2>Hobbies</h2>
+    <ul>
+      <li>Sketchbook</li>
+      <li>Paint set</li>
+    </ul>
+  </section>
+</body>
+</html>
+
+
+<!-- hayley.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hayley's Christmas List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav><a href="index.html">⬅ Back</a></nav>
+  <header><h1>🎀 Hayley's Christmas List</h1></header>
+
+  <section>
+    <h2>Makeup & Beauty</h2>
+    <ul>
+      <li>Makeup brushes</li>
+      <li>Lip gloss set</li>
+    </ul>
+
+    <h2>Clothes</h2>
+    <ul>
+      <li>Winter jacket</li>
+      <li>Leggings</li>
+    </ul>
+
+    <h2>Room Decor</h2>
+    <ul>
+      <li>LED strips</li>
+      <li>Wall art</li>
+    </ul>
+  </section>
+</body>
+</html>
+
+
+<!-- alexa.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexa's Christmas List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav><a href="index.html">⬅ Back</a></nav>
+  <header><h1>🎀 Alexa's Christmas List</h1></header>
+
+  <section>
+    <h2>Toys</h2>
+    <ul>
+      <li>Dolls</li>
+      <li>Play kitchen set</li>
+    </ul>
+
+    <h2>Books</h2>
+    <ul>
+      <li>Storybooks</li>
+      <li>Coloring books</li>
+    </ul>
+
+    <h2>Stocking Stuffers</h2>
+    <ul>
+      <li>Stickers</li>
+      <li>Candy</li>
+    </ul>
+  </section>
+</body>
+</html>
+
+
+<!-- style.css -->
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(#b30024, #ff5f7f);
+  color: white;
+}
+
+nav {
+  background: rgba(255,255,255,0.15);
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+section {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(255,255,255,0.18);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+h2 {
+  margin-top: 1.5rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+</style>
+
