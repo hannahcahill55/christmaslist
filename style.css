@@ -1,132 +1,87 @@
-/* styles.css - simple festive styling */
-:root{
-  --bg1: #08192b;
-  --bg2: #06304d;
-  --card: rgba(255,255,255,0.95);
-  --accent: #e34234;
-  --accent2: #ffd166;
-  --muted: #6b7b8c;
-  --glass: rgba(255,255,255,0.06);
-  --radius: 14px;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+/* Red + Green Christmas Theme */
+body.page.home {
+  background: linear-gradient(180deg, #c50000, #006400);
+  color: white;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background: linear-gradient(180deg,var(--bg1),var(--bg2));
-  color:#fff;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+.site-header.redgreen {
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid rgba(255,255,255,0.3);
 }
 
-/* header */
-.site-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 24px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.site-header.small{padding:12px 20px}
-.brand h1{
-  margin:0;
-  font-size:1.5rem;
-  letter-spacing:0.4px;
-}
-.tag{margin:4px 0 0;color:var(--muted);font-size:0.9rem}
-
-/* nav */
-.nav a{
-  color:var(--accent2);
-  text-decoration:none;
-  margin-left:14px;
-  padding:8px 12px;
-  border-radius:8px;
-  background:transparent;
-  transition:all .18s;
-  font-weight:600;
-}
-.nav a:hover{transform:translateY(-2px); background:var(--glass); color:#fff}
-
-/* layout */
-.container{
-  max-width:1000px;
-  margin:28px auto;
-  padding:0 20px 80px;
+/* Tree animation container */
+.tree-container {
+  position: relative;
+  width: 200px;
+  margin: 30px auto;
+  height: 260px;
 }
 
-/* cards */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  margin-bottom:28px;
-}
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding:18px;
-  border-radius:var(--radius);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-  min-height:140px;
-}
-.card h2{margin:0 0 6px 0}
-.card .preview{color:var(--muted); margin-bottom:12px}
-.btn{
-  display:inline-block;
-  text-decoration:none;
-  padding:8px 12px;
-  background:var(--accent);
-  color:#fff;
-  border-radius:10px;
-  font-weight:700;
+/* Christmas tree triangle */
+.tree {
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 160px solid #0a8f00;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sway 3s infinite ease-in-out;
 }
 
-/* profile + list */
-.profile{
-  display:flex;
-  gap:16px;
-  align-items:center;
-  margin-bottom:18px;
-}
-.avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:4px solid rgba(255,255,255,0.06)}
-.list ul{padding-left:1.1rem;color:#fff}
-.list li{margin:8px 0;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px}
-
-/* footer */
-.site-footer{
-  position:fixed;
-  left:0;right:0;bottom:0;
-  padding:10px 20px;
-  background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
-  color:var(--muted);
-  text-align:center;
-  font-size:0.95rem;
+/* Tree trunk */
+.tree::after {
+  content: "";
+  width: 40px;
+  height: 60px;
+  background: #5c3a1e;
+  position: absolute;
+  bottom: -60px;
+  left: -20px;
+  border-radius: 6px;
 }
 
-/* howto */
-.howto{background:rgba(255,255,255,0.02);padding:12px;border-radius:12px;color:var(--muted)}
-
-/* responsive */
-@media (max-width:640px){
-  .site-header{flex-direction:column;align-items:flex-start;gap:10px}
-  .nav{display:flex;flex-wrap:wrap}
-  .site-footer{position:static;margin-top:30px;border-top:1px solid rgba(255,255,255,0.03)}
+/* Glowing star */
+.star {
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 28px solid gold;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(35deg);
+  animation: glow 1.5s infinite ease-in-out;
 }
 
-/* little snow dots (decorative) */
-body::after{
-  content:"";
-  pointer-events:none;
-  position:fixed;
-  inset:0;
-  background-image:
-    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.06) 0 2px, transparent 3px),
-    radial-gradient(circle at 80% 40%, rgba(255,255,255,0.05) 0 2px, transparent 3px),
-    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.04) 0 2px, transparent 3px);
-  opacity:0.8;
-  mix-blend-mode:screen;
+/* Star sparkle */
+.star:after {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 19px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 28px solid gold;
 }
+
+/* Sway animation */
+@keyframes sway {
+  0% { transform: translateX(-50%) rotate(-2deg); }
+  50% { transform: translateX(-50%) rotate(2deg); }
+  100% { transform: translateX(-50%) rotate(-2deg); }
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 2px gold); }
+  50% { filter: drop-shadow(0 0 10px yellow); }
+  100% { filter: drop-shadow(0 0 2px gold); }
+}
+
 
