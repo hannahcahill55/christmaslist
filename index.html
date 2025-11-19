@@ -1,50 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christmas Lists</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Christmas Lists — Hayley, Hannah & Alexa</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page home">
+  <header class="site-header">
+    <div class="brand">
+      <h1>🎄 Holiday Wishes</h1>
+      <p class="tag">Click a name to see their full Christmas list</p>
+    </div>
+    <nav class="nav">
+      <a href="hayley.html">Hayley</a>
+      <a href="hannah.html">Hannah</a>
+      <a href="alexa.html">Alexa</a>
+    </nav>
+  </header>
 
-    <header>
-        <h1>🎁 Christmas Lists 2024 🎄</h1>
-        <nav>
-            <ul>
-                <li><a href="hayley.html">Hayley</a></li>
-                <li><a href="hannah.html">Hannah</a></li>
-                <li><a href="alexa.html">Alexa</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main class="container">
+    <section class="cards">
+      <article class="card">
+        <h2>Hayley</h2>
+        <p class="preview">Top picks: Cozy blanket, wireless earbuds, holiday sweater.</p>
+        <a class="btn" href="hayley.html">View Hayley's List</a>
+      </article>
 
-    <section class="intro">
-        <h2>Welcome!</h2>
-        <p>Select a name from the navigation bar to view their Christmas list.</p>
+      <article class="card">
+        <h2>Hannah</h2>
+        <p class="preview">Top picks: Instant camera, cookbook, succulent garden.</p>
+        <a class="btn" href="hannah.html">View Hannah's List</a>
+      </article>
+
+      <article class="card">
+        <h2>Alexa</h2>
+        <p class="preview">Top picks: Puzzle, scented candles, board game.</p>
+        <a class="btn" href="alexa.html">View Alexa's List</a>
+      </article>
     </section>
 
-    <section class="lists">
-        <div class="card">
-            <h3>Hayley's List</h3>
-            <p>See what Hayley wants this year!</p>
-            <a class="btn" href="hayley.html">View List</a>
-        </div>
-
-        <div class="card">
-            <h3>Hannah's List</h3>
-            <p>Check out Hannah's most wished-for gifts.</p>
-            <a class="btn" href="hannah.html">View List</a>
-        </div>
-
-        <div class="card">
-            <h3>Alexa's List</h3>
-            <p>See what Alexa is asking for this Christmas.</p>
-            <a class="btn" href="alexa.html">View List</a>
-        </div>
+    <section class="howto">
+      <h3>How to edit</h3>
+      <p>Open any of the HTML files and replace the list items with the real gifts. Styles are in <code>styles.css</code>.</p>
     </section>
+  </main>
 
+  <footer class="site-footer">
+    <p>Made with ❤️ — Merry Christmas!</p>
+  </footer>
 </body>
 </html>
+
 
 
