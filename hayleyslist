@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hayley's Christmas List</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#b30024, #ff5f7f);
+      color: white;
+    }
+
+    nav {
+      background: rgba(255,255,255,0.15);
+      padding: 1rem 2rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.18);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .category {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    .category h3 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">⬅ Back to Family Lists</a>
+  </nav>
+
+  <header>
+    <h1>🎀 Hayley's Christmas List 🎁</h1>
+    <p>Here are Hayley's gift wishes organized by category!</p>
+  </header>
+
+  <section>
+    <div class="category">
+      <h3>💄 Makeup & Beauty</h3>
+      <ul>
+        <li>Makeup brushes</li>
+        <li>Eyeshadow palette</li>
+        <li>Skincare set</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h3>👗 Clothes</h3>
+      <ul>
+        <li>Winter sweater</li>
+        <li>Boots</li>
+        <li>Gold necklace</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h3>🪩 Room Decor</h3>
+      <ul>
+        <li>LED lights</li>
+        <li>Throw pillows</li>
+        <li>Wall posters</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h3>🧦 Stocking Stuffers</h3>
+      <ul>
+        <li>Mini perfumes</li>
+        <li>Chocolate</li>
+        <li>Small keychains</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
