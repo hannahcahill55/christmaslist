@@ -1,7 +1,9 @@
 /* Red + Green Christmas Theme */
+/* Red + Green gradient background ONLY for homepage */
 body.page.home {
-  background: linear-gradient(180deg, #c50000, #006400);
-  color: white;
+  background: linear-gradient(180deg, red, green);
+}
+
 }
 
 .site-header.redgreen {
