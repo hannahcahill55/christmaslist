@@ -1,135 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hayley's Christmas List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayley's Christmas List</title>
 
-<style>
-    body {
-        margin: 0;
-        background: #c40000;
-        color: white;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        position: relative;
-        overflow-x: hidden;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
 
-    h1 {
-        font-size: 2.4rem;
-        text-shadow: 2px 2px 4px black;
-        margin-top: 15px;
-    }
+        /* PRESENT BORDER AROUND THE PAGE */
+        body {
+            --present-size: 80px;
+            border-image-source: url('https://i.imgur.com/8JqjY7w.png'); /* repeating presents border */
+            border-image-slice: 30;
+            border-image-repeat: round;
+            border-style: solid;
+            border-width: var(--present-size);
+        }
 
-    /* PRESENT BORDER */
-    .present {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        background: #fff;
-        border-radius: 6px;
-        animation: glow 2s infinite alternate;
-    }
+        /* Wrapper keeps content inside border nicely */
+        .wrapper {
+            padding: 40px;
+            text-align: center;
+        }
 
-    /* Different colors for variety */
-    .red { background: #ff4444; }
-    .green { background: #44ff44; }
-    .blue { background: #4488ff; }
-    .yellow { background: #ffeb3b; }
-    .pink { background: #ff66cc; }
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+        }
 
-    /* Ribbon */
-    .present::before {
-        content: "";
-        position: absolute;
-        width: 8px;
-        height: 40px;
-        background: rgba(255,255,255,0.8);
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .present::after {
-        content: "";
-        position: absolute;
-        width: 40px;
-        height: 8px;
-        background: rgba(255,255,255,0.8);
-        top: 16px;
-    }
+        .content ul {
+            list-style: none;
+            font-size: 1.4rem;
+            padding: 0;
+        }
 
-    @keyframes glow {
-        0%   { filter: brightness(0.7); }
-        100% { filter: brightness(1.45); }
-    }
-</style>
+        .content li {
+            margin: 12px 0;
+        }
+    </style>
+
 </head>
-
 <body>
 
-<h1>Hayley's Christmas List 🎁</h1>
+    <div class="wrapper">
+        <h1>Hayley's Christmas List 🎁</h1>
 
-<script>
-    const presentColors = ["red","green","blue","yellow","pink"];
-    const numPresentsPerSide = 18;
-    const presents = [];
-
-    function createPresent(x, y, colorClass) {
-        const present = document.createElement("div");
-        present.className = "present " + colorClass;
-        present.style.left = x + "px";
-        present.style.top = y + "px";
-        present.style.animationDuration = (1.5 + Math.random()*1.5) + "s";
-        document.body.appendChild(present);
-        presents.push(present);
-    }
-
-    function initPresents() {
-        const w = window.innerWidth;
-        const h = window.innerHeight;
-        const size = 40;
-
-        // Top border
-        for (let i = 0; i < numPresentsPerSide; i++) {
-            let x = i * (w / numPresentsPerSide);
-            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
-            createPresent(x, 0, color);
-        }
-
-        // Bottom border
-        for (let i = 0; i < numPresentsPerSide; i++) {
-            let x = i * (w / numPresentsPerSide);
-            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
-            createPresent(x, h - size, color);
-        }
-
-        // Left border
-        for (let i = 0; i < numPresentsPerSide; i++) {
-            let y = i * (h / numPresentsPerSide);
-            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
-            createPresent(0, y, color);
-        }
-
-        // Right border
-        for (let i = 0; i < numPresentsPerSide; i++) {
-            let y = i * (h / numPresentsPerSide);
-            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
-            createPresent(w - size, y, color);
-        }
-    }
-
-    window.addEventListener("resize", () => {
-        presents.forEach(p => p.remove());
-        presents.length = 0;
-        initPresents();
-    });
-
-    initPresents();
-</script>
+        <div class="content">
+            <ul>
+                <li>Example Item 1</li>
+                <li>Example Item 2</li>
+                <li>Example Item 3</li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 </html>
+
 
 
 
