@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025 Christmas Lists</title>
+
     <style>
         body {
             margin: 0;
@@ -12,39 +13,47 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative;
         }
 
-        /* Decorative Christmas Border */
-        body::before {
-            content: "";
+        /* CHRISTMAS LIGHTS BORDER (animated twinkle) */
+        .lights-border {
             position: fixed;
             top: 0; left: 0;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
-            border: 25px solid transparent;
-            border-image: url('https://i.imgur.com/1nJ1F6C.png') 60 round;
             z-index: 9999;
+            box-sizing: border-box;
+            border: 22px solid transparent;
+            border-image: url('https://i.imgur.com/puFaYGO.png') 60 round;
+            animation: glow 1.6s infinite alternate ease-in-out;
+        }
+
+        @keyframes glow {
+            0%   { filter: brightness(0.7) hue-rotate(0deg); }
+            50%  { filter: brightness(1.4) hue-rotate(30deg); }
+            100% { filter: brightness(1.1) hue-rotate(-20deg); }
         }
 
         header {
-            padding-top: 30px;
+            padding-top: 20px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.7rem;
             text-shadow: 2px 2px 4px black;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        /* Nav Bar */
+        /* NAV BAR */
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 10px 0 30px;
             display: flex;
             justify-content: center;
-            gap: 50px;
-            margin-bottom: 40px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
@@ -62,16 +71,23 @@
             transform: scale(1.1);
         }
 
-        /* Profile Section */
+        /* PROFILE SECTION */
         .profiles {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 20px;
+            gap: 35px;
+            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .profile {
             text-align: center;
+            transition: transform 0.25s, filter 0.25s;
+        }
+
+        .profile:hover {
+            transform: scale(1.08);
+            filter: brightness(1.2);
         }
 
         .profile img {
@@ -80,7 +96,8 @@
             border-radius: 50%;
             border: 4px solid white;
             object-fit: cover;
-            box-shadow: 0 0 10px black;
+            box-shadow: 0 0 12px black;
+            cursor: pointer;
         }
 
         .profile p {
@@ -89,16 +106,43 @@
             font-weight: bold;
         }
 
-        /* Countdown */
+        /* COUNTDOWN */
         #countdown {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            margin-top: 40px;
+            margin-top: 35px;
             text-shadow: 2px 2px 4px black;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            .profile img {
+                width: 95px;
+                height: 95px;
+            }
+
+            #countdown {
+                font-size: 1.3rem;
+                padding: 0 10px;
+            }
+
+            .lights-border {
+                border-width: 14px;
+            }
         }
     </style>
 </head>
 <body>
+
+<div class="lights-border"></div>
 
 <header>
     <h1>2025 Christmas Lists</h1>
@@ -112,25 +156,27 @@
     </nav>
 </header>
 
-<!-- Profile Pictures -->
+<!-- CLICKABLE PROFILE PICTURES -->
 <div class="profiles">
-    <div class="profile">
+
+    <a href="hayley.html" class="profile">
         <img src="https://i.imgur.com/PE5hXKZ.jpeg" alt="Hayley">
         <p>Hayley</p>
-    </div>
+    </a>
 
-    <div class="profile">
+    <a href="hannah.html" class="profile">
         <img src="https://i.imgur.com/GsZ8rSZ.jpeg" alt="Hannah">
         <p>Hannah</p>
-    </div>
+    </a>
 
-    <div class="profile">
+    <a href="alexa.html" class="profile">
         <img src="https://i.imgur.com/Q2oYU2a.jpeg" alt="Alexa">
         <p>Alexa</p>
-    </div>
+    </a>
+
 </div>
 
-<!-- Countdown -->
+<!-- COUNTDOWN -->
 <div id="countdown"></div>
 
 <script>
@@ -160,6 +206,7 @@
 
 </body>
 </html>
+
 
 
 
