@@ -13,7 +13,6 @@
             color: white;
             text-align: center;
 
-            /* SHIMMERING BACKGROUND */
             background: linear-gradient(120deg, #c40000, #ff2a2a, #c40000);
             background-size: 300% 300%;
             animation: shimmer 8s infinite alternate ease-in-out;
@@ -37,17 +36,25 @@
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            margin: 0 15px;
         }
 
         .container {
             padding: 40px 20px;
         }
 
+        .profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+        }
+
         h1 {
             font-size: 2.6rem;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
         }
 
         ul {
@@ -60,6 +67,7 @@
             margin: 12px 0;
         }
     </style>
+
 </head>
 <body>
 
@@ -68,6 +76,7 @@
     </nav>
 
     <div class="container">
+        <img class="profile" src="IMG_3953.jpeg" alt="Hannah">
         <h1>Hannah's Christmas List 🎄</h1>
 
         <ul>
@@ -79,6 +88,7 @@
 
 </body>
 </html>
+
 
 
 
