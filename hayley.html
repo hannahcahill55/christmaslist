@@ -13,129 +13,124 @@
         text-align: center;
         font-family: Arial, sans-serif;
         padding: 20px;
+        position: relative;
+        overflow-x: hidden;
     }
 
     h1 {
         font-size: 2.4rem;
         text-shadow: 2px 2px 4px black;
+        margin-top: 15px;
     }
 
-    /* TREE + PRESENTS CONTAINER */
-    .tree-container {
-        margin-top: 40px;
-        position: relative;
-        width: 220px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* CHRISTMAS TREE (pure CSS) */
-    .tree {
-        width: 0;
-        height: 0;
-        border-left: 110px solid transparent;
-        border-right: 110px solid transparent;
-        border-bottom: 170px solid #0b5;
-        position: relative;
-        animation: glowTree 2s infinite alternate;
-    }
-
-    .tree::before {
-        content: "";
-        position: absolute;
-        top: -90px;
-        left: -90px;
-        width: 0;
-        height: 0;
-        border-left: 90px solid transparent;
-        border-right: 90px solid transparent;
-        border-bottom: 140px solid #0a4;
-    }
-
-    .tree::after {
-        content: "";
-        position: absolute;
-        top: -170px;
-        left: -70px;
-        width: 0;
-        height: 0;
-        border-left: 70px solid transparent;
-        border-right: 70px solid transparent;
-        border-bottom: 110px solid #083;
-    }
-
-    /* TRUNK */
-    .trunk {
-        width: 50px;
-        height: 50px;
-        background: #532;
-        margin: 0 auto;
-        margin-top: -10px;
-    }
-
-    /* ANIMATED PRESENTS */
+    /* PRESENT BORDER */
     .present {
-        width: 50px;
+        position: absolute;
+        width: 40px;
         height: 40px;
         background: #fff;
-        position: absolute;
-        bottom: -60px;
-        border-radius: 4px;
+        border-radius: 6px;
         animation: glow 2s infinite alternate;
     }
 
-    .present.red  { background: #ff4444; left: -20px; }
-    .present.green { background: #44ff44; right: -20px; }
-    .present.blue { background: #4488ff; left: 85px; }
+    /* Different colors for variety */
+    .red { background: #ff4444; }
+    .green { background: #44ff44; }
+    .blue { background: #4488ff; }
+    .yellow { background: #ffeb3b; }
+    .pink { background: #ff66cc; }
 
-    /* PRESENT RIBBONS */
+    /* Ribbon */
     .present::before {
         content: "";
         position: absolute;
         width: 8px;
         height: 40px;
-        background: rgba(255,255,255,0.7);
+        background: rgba(255,255,255,0.8);
         left: 50%;
         transform: translateX(-50%);
     }
-
     .present::after {
         content: "";
         position: absolute;
-        width: 50px;
+        width: 40px;
         height: 8px;
-        background: rgba(255,255,255,0.7);
+        background: rgba(255,255,255,0.8);
         top: 16px;
     }
 
-    /* GLOW ANIMATIONS */
     @keyframes glow {
         0%   { filter: brightness(0.7); }
-        100% { filter: brightness(1.6); }
-    }
-
-    @keyframes glowTree {
-        0%   { filter: drop-shadow(0 0 6px #2fff97); }
-        100% { filter: drop-shadow(0 0 14px #7affc9); }
+        100% { filter: brightness(1.45); }
     }
 </style>
-
 </head>
+
 <body>
 
 <h1>Hayley's Christmas List 🎁</h1>
 
-<div class="tree-container">
-    <div class="tree"></div>
-    <div class="trunk"></div>
+<script>
+    const presentColors = ["red","green","blue","yellow","pink"];
+    const numPresentsPerSide = 18;
+    const presents = [];
 
-    <div class="present red"></div>
-    <div class="present green"></div>
-    <div class="present blue"></div>
-</div>
+    function createPresent(x, y, colorClass) {
+        const present = document.createElement("div");
+        present.className = "present " + colorClass;
+        present.style.left = x + "px";
+        present.style.top = y + "px";
+        present.style.animationDuration = (1.5 + Math.random()*1.5) + "s";
+        document.body.appendChild(present);
+        presents.push(present);
+    }
+
+    function initPresents() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const size = 40;
+
+        // Top border
+        for (let i = 0; i < numPresentsPerSide; i++) {
+            let x = i * (w / numPresentsPerSide);
+            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
+            createPresent(x, 0, color);
+        }
+
+        // Bottom border
+        for (let i = 0; i < numPresentsPerSide; i++) {
+            let x = i * (w / numPresentsPerSide);
+            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
+            createPresent(x, h - size, color);
+        }
+
+        // Left border
+        for (let i = 0; i < numPresentsPerSide; i++) {
+            let y = i * (h / numPresentsPerSide);
+            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
+            createPresent(0, y, color);
+        }
+
+        // Right border
+        for (let i = 0; i < numPresentsPerSide; i++) {
+            let y = i * (h / numPresentsPerSide);
+            let color = presentColors[Math.floor(Math.random()*presentColors.length)];
+            createPresent(w - size, y, color);
+        }
+    }
+
+    window.addEventListener("resize", () => {
+        presents.forEach(p => p.remove());
+        presents.length = 0;
+        initPresents();
+    });
+
+    initPresents();
+</script>
 
 </body>
 </html>
+
 
 
 
