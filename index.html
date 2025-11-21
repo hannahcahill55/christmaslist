@@ -1,190 +1,81 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Family Christmas Lists</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Christmas Lists</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #c40000, #0b7a0b);
+            background-size: 400% 400%;
+            animation: shimmer 8s ease infinite;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            padding: 40px 0 10px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="hannah.html">Hannah</a></li>
-      <li><a href="hayley.html">Hayley</a></li>
-      <li><a href="alexa.html">Alexa</a></li>
-    </ul>
-  </nav>
 
-  <header>
-    <h1>🎄 Family Christmas Lists 🎁</h1>
-    <p>Choose a family member to view their Christmas list.</p>
-  </header>
+<header>
+    <h1>2025 Christmas Lists</h1>
+
+    <nav>
+        <ul>
+            <li><a href="hayley.html">Hayley</a></li>
+            <li><a href="hannah.html">Hannah</a></li>
+            <li><a href="alexa.html">Alexa</a></li>
+        </ul>
+    </nav>
+</header>
+
 </body>
 </html>
 
-
-<!-- hannah.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hannah's Christmas List</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav><a href="index.html">⬅ Back</a></nav>
-  <header><h1>🎁 Hannah's Christmas List</h1></header>
-
-  <section>
-    <h2>Electronics</h2>
-    <ul>
-      <li>AirPods</li>
-      <li>Phone case</li>
-      <li>Bluetooth speaker</li>
-    </ul>
-
-    <h2>Clothes</h2>
-    <ul>
-      <li>Sweater</li>
-      <li>Jeans</li>
-      <li>Boots</li>
-    </ul>
-
-    <h2>Hobbies</h2>
-    <ul>
-      <li>Sketchbook</li>
-      <li>Paint set</li>
-    </ul>
-  </section>
-</body>
-</html>
-
-
-<!-- hayley.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hayley's Christmas List</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav><a href="index.html">⬅ Back</a></nav>
-  <header><h1>🎀 Hayley's Christmas List</h1></header>
-
-  <section>
-    <h2>Makeup & Beauty</h2>
-    <ul>
-      <li>Makeup brushes</li>
-      <li>Lip gloss set</li>
-    </ul>
-
-    <h2>Clothes</h2>
-    <ul>
-      <li>Winter jacket</li>
-      <li>Leggings</li>
-    </ul>
-
-    <h2>Room Decor</h2>
-    <ul>
-      <li>LED strips</li>
-      <li>Wall art</li>
-    </ul>
-  </section>
-</body>
-</html>
-
-
-<!-- alexa.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexa's Christmas List</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav><a href="index.html">⬅ Back</a></nav>
-  <header><h1>🎀 Alexa's Christmas List</h1></header>
-
-  <section>
-    <h2>Toys</h2>
-    <ul>
-      <li>Dolls</li>
-      <li>Play kitchen set</li>
-    </ul>
-
-    <h2>Books</h2>
-    <ul>
-      <li>Storybooks</li>
-      <li>Coloring books</li>
-    </ul>
-
-    <h2>Stocking Stuffers</h2>
-    <ul>
-      <li>Stickers</li>
-      <li>Candy</li>
-    </ul>
-  </section>
-</body>
-</html>
-
-
-<!-- style.css -->
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(#b30024, #ff5f7f);
-  color: white;
-}
-
-nav {
-  background: rgba(255,255,255,0.15);
-  padding: 1rem;
-  backdrop-filter: blur(6px);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-header {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-section {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: rgba(255,255,255,0.18);
-  padding: 2rem;
-  border-radius: 20px;
-}
-
-h2 {
-  margin-top: 1.5rem;
-}
-
-ul {
-  padding-left: 1.2rem;
-}
-</style>
 
 
 
