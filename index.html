@@ -1,152 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025 Christmas Lists</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025 Christmas Lists</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #c40000;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #c40000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+    }
 
-        /* CHRISTMAS LIGHTS BORDER (animated twinkle) */
-        .lights-border {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            box-sizing: border-box;
-            border: 22px solid transparent;
-            border-image: url('https://i.imgur.com/puFaYGO.png') 60 round;
-            animation: glow 1.6s infinite alternate ease-in-out;
-        }
+    /* CHRISTMAS LIGHTS STRAND */
+    .light {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255,255,255,0.6);
+        animation: blink 2s infinite alternate;
+    }
 
-        @keyframes glow {
-            0%   { filter: brightness(0.7) hue-rotate(0deg); }
-            50%  { filter: brightness(1.4) hue-rotate(30deg); }
-            100% { filter: brightness(1.1) hue-rotate(-20deg); }
-        }
+    @keyframes blink {
+        0% { opacity: 0.3; filter: brightness(0.7); }
+        50% { opacity: 1; filter: brightness(1.6); }
+        100% { opacity: 0.4; filter: brightness(1); }
+    }
 
-        header {
-            padding-top: 20px;
-        }
+    /* NAVIGATION */
+    header {
+        padding-top: 20px;
+    }
 
+    h1 {
+        font-size: 2.7rem;
+        text-shadow: 2px 2px 4px black;
+        margin-bottom: 12px;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 1.3rem;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 14px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+        background: rgba(255,255,255,0.2);
+        transform: scale(1.1);
+    }
+
+    /* PROFILE SECTION */
+    .profiles {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .profile {
+        text-align: center;
+        transition: transform 0.25s, filter 0.25s;
+    }
+
+    .profile:hover {
+        transform: scale(1.08);
+        filter: brightness(1.2);
+    }
+
+    .profile img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 4px solid white;
+        object-fit: cover;
+        box-shadow: 0 0 12px black;
+        cursor: pointer;
+    }
+
+    .profile p {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* COUNTDOWN */
+    #countdown {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-top: 35px;
+        text-shadow: 2px 2px 4px black;
+    }
+
+    /* MOBILE RESPONSIVE DESIGN */
+    @media (max-width: 600px) {
         h1 {
-            font-size: 2.7rem;
-            text-shadow: 2px 2px 4px black;
-            margin-bottom: 12px;
+            font-size: 2rem;
         }
 
-        /* NAV BAR */
         nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 30px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        nav ul li a {
-            color: white;
-            font-size: 1.3rem;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 14px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        /* PROFILE SECTION */
-        .profiles {
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-
-        .profile {
-            text-align: center;
-            transition: transform 0.25s, filter 0.25s;
-        }
-
-        .profile:hover {
-            transform: scale(1.08);
-            filter: brightness(1.2);
+            gap: 18px;
         }
 
         .profile img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            box-shadow: 0 0 12px black;
-            cursor: pointer;
+            width: 95px;
+            height: 95px;
         }
 
-        .profile p {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        /* COUNTDOWN */
         #countdown {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-top: 35px;
-            text-shadow: 2px 2px 4px black;
+            font-size: 1.3rem;
+            padding: 0 10px;
         }
-
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 18px;
-            }
-
-            .profile img {
-                width: 95px;
-                height: 95px;
-            }
-
-            #countdown {
-                font-size: 1.3rem;
-                padding: 0 10px;
-            }
-
-            .lights-border {
-                border-width: 14px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
-<body>
 
-<div class="lights-border"></div>
+<body>
 
 <header>
     <h1>2025 Christmas Lists</h1>
-
     <nav>
         <ul>
             <li><a href="hayley.html">🎁 Hayley</a></li>
@@ -158,7 +149,6 @@
 
 <!-- CLICKABLE PROFILE PICTURES -->
 <div class="profiles">
-
     <a href="hayley.html" class="profile">
         <img src="https://i.imgur.com/PE5hXKZ.jpeg" alt="Hayley">
         <p>Hayley</p>
@@ -173,13 +163,58 @@
         <img src="https://i.imgur.com/Q2oYU2a.jpeg" alt="Alexa">
         <p>Alexa</p>
     </a>
-
 </div>
 
 <!-- COUNTDOWN -->
 <div id="countdown"></div>
 
+<!-- CHRISTMAS LIGHTS SCRIPT -->
 <script>
+    const colors = ["#FF0000","#FFFF00","#00FF00","#00FFFF","#FF00FF","#FFA500"];
+    const numLights = 50; // total lights
+    const lights = [];
+
+    for(let i=0; i<numLights; i++){
+        const light = document.createElement("div");
+        light.className = "light";
+        light.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+        // Random positions along border
+        const side = i % 4;
+        switch(side){
+            case 0: // top
+                light.style.top = "0px";
+                light.style.left = Math.random()*window.innerWidth + "px";
+                break;
+            case 1: // right
+                light.style.top = Math.random()*window.innerHeight + "px";
+                light.style.right = "0px";
+                break;
+            case 2: // bottom
+                light.style.bottom = "0px";
+                light.style.left = Math.random()*window.innerWidth + "px";
+                break;
+            case 3: // left
+                light.style.top = Math.random()*window.innerHeight + "px";
+                light.style.left = "0px";
+                break;
+        }
+        // Random animation duration
+        light.style.animationDuration = (1 + Math.random()*2) + "s";
+        document.body.appendChild(light);
+        lights.push(light);
+    }
+
+    function updateLights(){
+        lights.forEach(light=>{
+            if(Math.random() > 0.7){
+                light.style.animationDuration = (0.8 + Math.random()*2) + "s";
+            }
+        });
+    }
+
+    setInterval(updateLights, 1000);
+
+    // Countdown
     function updateCountdown() {
         const christmas = new Date("December 25, 2025 00:00:00").getTime();
         const now = new Date().getTime();
@@ -196,7 +231,7 @@
             minutes + " Min • " +
             seconds + " Sec<br>until Christmas 🎅🎄";
 
-        if (diff < 0) {
+        if(diff < 0){
             document.getElementById("countdown").innerHTML = "Merry Christmas!! 🎁🎄";
         }
     }
@@ -206,6 +241,7 @@
 
 </body>
 </html>
+
 
 
 
