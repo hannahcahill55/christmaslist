@@ -14,15 +14,16 @@
         text-align: center;
         padding: 20px;
         position: relative;
+        overflow-x: hidden;
     }
 
-    /* CHRISTMAS LIGHTS STRAND */
+    /* LIGHTS */
     .light {
         position: absolute;
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        box-shadow: 0 0 10px rgba(255,255,255,0.6);
+        box-shadow: 0 0 8px rgba(255,255,255,0.8);
         animation: blink 2s infinite alternate;
     }
 
@@ -111,25 +112,12 @@
         text-shadow: 2px 2px 4px black;
     }
 
-    /* MOBILE RESPONSIVE DESIGN */
+    /* MOBILE RESPONSIVE */
     @media (max-width: 600px) {
-        h1 {
-            font-size: 2rem;
-        }
-
-        nav ul {
-            gap: 18px;
-        }
-
-        .profile img {
-            width: 95px;
-            height: 95px;
-        }
-
-        #countdown {
-            font-size: 1.3rem;
-            padding: 0 10px;
-        }
+        h1 { font-size: 2rem; }
+        nav ul { gap: 18px; }
+        .profile img { width: 95px; height: 95px; }
+        #countdown { font-size: 1.3rem; padding: 0 10px; }
     }
 </style>
 </head>
@@ -171,48 +159,53 @@
 <!-- CHRISTMAS LIGHTS SCRIPT -->
 <script>
     const colors = ["#FF0000","#FFFF00","#00FF00","#00FFFF","#FF00FF","#FFA500"];
-    const numLights = 50; // total lights
+    const numLightsPerSide = 25;
     const lights = [];
 
-    for(let i=0; i<numLights; i++){
+    function createLight(x, y, color) {
         const light = document.createElement("div");
         light.className = "light";
-        light.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-        // Random positions along border
-        const side = i % 4;
-        switch(side){
-            case 0: // top
-                light.style.top = "0px";
-                light.style.left = Math.random()*window.innerWidth + "px";
-                break;
-            case 1: // right
-                light.style.top = Math.random()*window.innerHeight + "px";
-                light.style.right = "0px";
-                break;
-            case 2: // bottom
-                light.style.bottom = "0px";
-                light.style.left = Math.random()*window.innerWidth + "px";
-                break;
-            case 3: // left
-                light.style.top = Math.random()*window.innerHeight + "px";
-                light.style.left = "0px";
-                break;
-        }
-        // Random animation duration
+        light.style.backgroundColor = color;
+        light.style.left = x + "px";
+        light.style.top = y + "px";
         light.style.animationDuration = (1 + Math.random()*2) + "s";
         document.body.appendChild(light);
         lights.push(light);
     }
 
-    function updateLights(){
-        lights.forEach(light=>{
-            if(Math.random() > 0.7){
-                light.style.animationDuration = (0.8 + Math.random()*2) + "s";
-            }
-        });
+    function initLights() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        // top
+        for(let i=0;i<numLightsPerSide;i++){
+            const x = i * (width / numLightsPerSide);
+            createLight(x, 0, colors[Math.floor(Math.random()*colors.length)]);
+        }
+        // bottom
+        for(let i=0;i<numLightsPerSide;i++){
+            const x = i * (width / numLightsPerSide);
+            createLight(x, height-12, colors[Math.floor(Math.random()*colors.length)]);
+        }
+        // left
+        for(let i=0;i<numLightsPerSide;i++){
+            const y = i * (height / numLightsPerSide);
+            createLight(0, y, colors[Math.floor(Math.random()*colors.length)]);
+        }
+        // right
+        for(let i=0;i<numLightsPerSide;i++){
+            const y = i * (height / numLightsPerSide);
+            createLight(width-12, y, colors[Math.floor(Math.random()*colors.length)]);
+        }
     }
 
-    setInterval(updateLights, 1000);
+    window.addEventListener("resize", ()=>{
+        lights.forEach(l=>l.remove());
+        lights.length = 0;
+        initLights();
+    });
+
+    initLights();
 
     // Countdown
     function updateCountdown() {
@@ -241,6 +234,7 @@
 
 </body>
 </html>
+
 
 
 
