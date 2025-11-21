@@ -1,40 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexa's Christmas List</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #c40000;
-            color: white;
-            text-align: center;
-            padding: 40px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexa's Christmas List</title>
 
-        h1 {
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px black;
-        }
+<style>
+    body {
+        margin: 0;
+        background: #c40000;
+        color: white;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
 
-        a {
-            color: white;
-            text-decoration: underline;
-            font-size: 1.2rem;
-        }
-    </style>
+    h1 {
+        font-size: 2.4rem;
+        text-shadow: 2px 2px 4px black;
+    }
+
+    .tree-container {
+        margin-top: 40px;
+        position: relative;
+        width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tree {
+        width: 0;
+        height: 0;
+        border-left: 110px solid transparent;
+        border-right: 110px solid transparent;
+        border-bottom: 170px solid #0b5;
+        position: relative;
+        animation: glowTree 2s infinite alternate;
+    }
+
+    .tree::before {
+        content: "";
+        position: absolute;
+        top: -90px;
+        left: -90px;
+        width: 0;
+        height: 0;
+        border-left: 90px solid transparent;
+        border-right: 90px solid transparent;
+        border-bottom: 140px solid #0a4;
+    }
+
+    .tree::after {
+        content: "";
+        position: absolute;
+        top: -170px;
+        left: -70px;
+        width: 0;
+        height: 0;
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+        border-bottom: 110px solid #083;
+    }
+
+    .trunk {
+        width: 50px;
+        height: 50px;
+        background: #532;
+        margin: 0 auto;
+        margin-top: -10px;
+    }
+
+    .present {
+        width: 50px;
+        height: 40px;
+        background: #fff;
+        position: absolute;
+        bottom: -60px;
+        border-radius: 4px;
+        animation: glow 2s infinite alternate;
+    }
+
+    .present.red  { background: #ff4444; left: -20px; }
+    .present.green { background: #44ff44; right: -20px; }
+    .present.blue { background: #4488ff; left: 85px; }
+
+    .present::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 40px;
+        background: rgba(255,255,255,0.7);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .present::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 8px;
+        background: rgba(255,255,255,0.7);
+        top: 16px;
+    }
+
+    @keyframes glow {
+        0%   { filter: brightness(0.7); }
+        100% { filter: brightness(1.6); }
+    }
+
+    @keyframes glowTree {
+        0%   { filter: drop-shadow(0 0 6px #2fff97); }
+        100% { filter: drop-shadow(0 0 14px #7affc9); }
+    }
+</style>
+
 </head>
 <body>
 
-<h1>Alexa's Christmas List</h1>
+<h1>Alexa's Christmas List ⭐</h1>
 
-<p>Put Alexa’s list here!</p>
+<div class="tree-container">
+    <div class="tree"></div>
+    <div class="trunk"></div>
 
-<p><a href="index.html">Back to Homepage</a></p>
+    <div class="present red"></div>
+    <div class="present green"></div>
+    <div class="present blue"></div>
+</div>
 
 </body>
 </html>
+
 
 
